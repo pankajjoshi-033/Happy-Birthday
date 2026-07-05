@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Tanuja 🎂</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* --- Reset & Core Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a0813, #4a1525, #7c223c, #2c0b1e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow-x: hidden;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- Container & Layout --- */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Typography & Headers --- */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #ff9ebb, #ffd275, #ff6584);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 4px 15px rgba(255, 101, 132, 0.3));
+    margin-bottom: 5px;
+    animation: gentlePulse 3s ease-in-out infinite alternate;
+}
+
+h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    color: #ffb3c6;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+@keyframes gentlePulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.04); }
+}
+
+/* --- Premium Matte Glass Card --- */
+.card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* --- Paragraph Styles --- */
+p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+p strong {
+    font-weight: 600;
+    color: #fff;
+}
+
+.highlight-text {
+    font-size: 1.6rem;
+    color: #ffe599 !important;
+    font-weight: 600;
+    margin-top: 35px;
+    text-shadow: 0 0 15px rgba(255, 229, 153, 0.4);
+}
+
+/* --- Call To Action Button --- */
+.btn {
+    margin-top: 20px;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #ff2d75, #ff6584);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(255, 45, 117, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 45, 117, 0.6);
+    background: linear-gradient(45deg, #ff0066, #ff4d88);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* --- Footer --- */
+.footer {
+    margin-top: 50px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.footer span {
+    color: #ff4d88;
+    font-weight: 600;
+}
+
+/* --- Premium Modal (Surprise Box) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    background: rgba(35, 15, 25, 0.85);
+    border: 1px solid rgba(255, 101, 132, 0.3);
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    transform: scale(0.7);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.active .modal {
+    transform: scale(1);
+}
+
+.modal h3 {
+    font-size: 2rem;
+    color: #ffd275;
+    margin-bottom: 15px;
+}
+
+.modal p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ffe3ec;
+}
+
+.close-btn {
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* --- Floating Particle Animations --- */
+.heart {
+    position: fixed;
+    bottom: -50px;
+    pointer-events: none;
+    animation: floatUp 7s linear infinite;
+    opacity: 0;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-110vh) translateX(50px) rotate(360deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* --- Responsive Adjustments --- */
+@media(max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2.2rem; }
+    .card { padding: 35px 20px; }
+    p { font-size: 1.05rem; }
+    .highlight-text { font-size: 1.3rem; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particle-container"></div>
+
+<div class="container">
+    <header>
+        <h1>🎂 Happy Birthday 🎂</h1>
+        <h2>💖 Tanuja Kandpal 💖</h2>
+    </header>
+
+    <main class="card">
+        <p>
+            Today is not just your birthday... <br>
+            Today is the day when the world was gifted with one of the most <strong>beautiful souls</strong>. 🌸
+        </p>
+
+        <p>
+            Dear Tanuja, you are not just my best friend... <br>
+            You are my biggest smile, my favourite person, my strongest support, my happiness, and one of the most precious blessings of my life. 🎀
+        </p>
+
+        <p>
+            Thank you for being there during my happiest moments and even during my difficult days. Your kindness, your smile, your care, and your heart make this world a much more beautiful place. ❤️
+        </p>
+
+        <p>
+            No matter how many people come into my life, you will always have a very special place in my heart. Distance, time, or anything else can never change our friendship. 💞
+        </p>
+
+        <p>
+            I pray that every dream you have comes true, every tear turns into happiness, every challenge becomes your strength, and every new day brings endless reasons to smile. 🌈
+        </p>
+
+        <p>
+            You deserve all the love, all the happiness, all the success, and every beautiful thing this world has to offer. ✨
+        </p>
+
+        <p>
+            Thank you for being my bestest friend. I'm truly lucky to have someone as amazing, kind, caring, and wonderful as you. May God always protect your smile forever. 🤍
+        </p>
+
+        <p class="highlight-text">
+            🎉 Happy Birthday Once Again, Tanuja! 🎂❤️
+        </p>
+
+        <button class="btn" onclick="toggleModal(true)">Click for a Surprise 🎁</button>
+    </main>
+
+    <footer class="footer">
+        Made with Endless Love & Best Wishes ❤️<br>
+        — Your Bestest Friend, <span>Pankaj 🫶</span>
+    </footer>
+</div>
+
+<div class="modal-overlay" id="surpriseModal">
+    <div class="modal">
+        <h3>🎂 Happy Birthday Tanuja! ❤️</h3>
+        <p>May your smile always shine brighter than the stars. 🌟</p>
+        <p>May every heartbeat bring happiness, every dream become reality, and every day remind you how incredibly special you are.</p>
+        <p style="margin-top: 10px; font-weight: 600; color: #ff6584;">You'll always be one of the most precious people in my life. 💖🎀</p>
+        <button class="close-btn" onclick="toggleModal(false)">Close ✨</button>
+    </div>
+</div>
+
+<script>
+// Smooth Custom Modal Controller
+function toggleModal(show) {
+    const modal = document.getElementById('surpriseModal');
+    if (show) {
+        modal.classList.add('active');
+    } else {
+        modal.classList.remove('active');
+    }
+}
+
+// Advanced Floating Particles System
+function createParticle() {
+    const container = document.getElementById('particle-container');
+    const particle = document.createElement("div");
+    
+    // Randomize types of floating elements
+    const items = ["❤️", "💖", "✨", "🌸", "🎈"];
+    const randomItem = items[Math.floor(Math.random() * items.length)];
+    
+    particle.className = "heart";
+    particle.innerHTML = randomItem;
+    
+    // Randomized positioning and scale dynamics
+    particle.style.left = Math.random() * 100 + "vw";
+    particle.style.fontSize = (15 + Math.random() * 25) + "px";
+    particle.style.animationDuration = (6 + Math.random() * 6) + "s";
+    
+    // Add slight horizontal drift variations
+    const horizontalDrift = (Math.random() * 100 - 50) + "px";
+    particle.style.setProperty('--drift', horizontalDrift);
+
+    container.appendChild(particle);
+
+    // Garbage collection to maintain performance
+    setTimeout(() => {
+        particle.remove();
+    }, 12000);
+}
+
+// Generate background particles smoothly
+setInterval(createParticle, 400);
+</script>
+
+</body>
+</html>
